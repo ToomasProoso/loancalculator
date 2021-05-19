@@ -1,0 +1,30 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="2021-04-21 add account" author="Toomas Prooso">
+        <createTable tableName="account">
+            <column name="personal_code" type="text">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="text"/>
+            <column name="address" type="text"/>
+            <column name="credit_modifier" type="numeric"/>
+
+        </createTable>
+
+        <createTable tableName="loan">
+            <column name="loan_amount" type="numeric">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="loan_period" type="numeric"/>
+
+        </createTable>
+
+
+    </changeSet>
+
+
+</databaseChangeLog>
