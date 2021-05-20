@@ -15,15 +15,6 @@
 
         </createTable>
 
-        <createTable tableName="loan">
-            <column name="loan_amount" type="numeric">
-                <constraints primaryKey="true"/>
-            </column>
-            <column name="loan_period" type="numeric"/>
-
-        </createTable>
-
-
     </changeSet>
 
 

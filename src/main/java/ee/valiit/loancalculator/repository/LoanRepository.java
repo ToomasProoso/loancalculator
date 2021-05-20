@@ -1,8 +1,10 @@
 package ee.valiit.loancalculator.repository;
 
+import ee.valiit.loancalculator.dto.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,14 +27,15 @@ public class LoanRepository {
         jdbcTemplate.update(sql, paramMap);
     }
 
-    public void insertLoan(Double loanAmount, Double loanPeriod) {
-        String sql = "INSERT INTO loan(loan_amount, loan_period)" +
-                "VALUES(:loanAmount, :loanPeriod)";
-        Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("loanAmount", loanAmount);
-        paramMap.put("loanPeriod", loanPeriod);
-        jdbcTemplate.update(sql, paramMap);
+    public Integer getCreditModifier(String code) {
+        String sql = "SELECT credit_modifier FROM account where personal_code = :dbPersonalCode ";
+        Map<String, Object> paramMap1 = new HashMap<>();
+        paramMap1.put("dbPersonalCode", code);
+        return jdbcTemplate.queryForObject(sql, paramMap1, Integer.class);
+
+
     }
+
 
 }
 

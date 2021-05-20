@@ -11,7 +11,7 @@
 	<groupId>ee.valiit</groupId>
 	<artifactId>loancalculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>loancalculator</name>
+	<name>loanCalculator</name>
 	<description>Loan calculator</description>
 	<properties>
 		<java.version>11</java.version>
